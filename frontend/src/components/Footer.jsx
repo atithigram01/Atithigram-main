@@ -61,7 +61,6 @@ export default function Footer() {
 
       <div className="border-t border-gray-700 pt-6 text-center text-xs text-gray-500">
         <p>&copy; {new Date().getFullYear()} ATITHIGRAM. All rights reserved. | Made by 💚 Team Atithigram </p>
-        <p className="mt-1">25% commission on homestays · 20% platform fee on products</p>
       </div>
     </footer>
   );

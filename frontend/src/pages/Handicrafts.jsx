@@ -10,12 +10,13 @@ import { useAuth } from '../context/AuthContext';
 
 /* ─── static products ─────────────────────────────────────────────────── */
 const STATIC_PRODUCTS = [
-  { _id: '1', name: 'Dokra Art Figurine',  description: 'Handcrafted using ancient lost-wax technique by Santal artisans.',       price: 850,  images: ['https://images.unsplash.com/photo-1600585153490-76fb20a32601?w=400'], sellerId: { name: 'Kamla Devi' } },
-  { _id: '2', name: 'Paitkar Painting',    description: 'Traditional scroll painting by the Chitrakar community depicting myths.',  price: 1200, images: ['https://upload.wikimedia.org/wikipedia/commons/5/56/Paitkar_painting.jpg'],    sellerId: { name: 'Raju Chitrakar' } },
-  { _id: '3', name: 'Bamboo Lamp Shade',   description: "Eco-friendly bamboo weave handcrafted by tribal women's SHG.",            price: 450,  images: ['https://images.unsplash.com/photo-1619195553516-c3bbbd74a8ea?w=400'], sellerId: { name: 'Tribal Craft SHG' } },
-  { _id: '4', name: 'Tribal Jewelry Set',  description: 'Silver oxidised jewelry inspired by Munda tribe motifs.',                 price: 2200, images: ['https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=400'], sellerId: { name: 'Anita Oraon' } },
-  { _id: '5', name: 'Sabai Grass Basket',  description: 'Hand-woven baskets made from natural sabai grass, multipurpose.',         price: 350,  images: ['https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400'], sellerId: { name: 'Meena Devi' } },
-  { _id: '6', name: 'Tussar Silk Saree',   description: 'Pure Bhagalpuri tussar silk with natural tribal motifs and borders.',     price: 3500, images: ['https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=400'], sellerId: { name: 'Rekha Silk House' } },
+  { _id: '1', name: 'Bamboo Basket', description: 'Beautifully crafted round bamboo basket for home utility.', price: 550, images: ['/handicrafts/item5.png'], sellerId: { name: 'Tribal Craft SHG' } },
+  { _id: '2', name: 'Classic Bamboo Pen Holder', description: 'Functional and eco-friendly bamboo pen holder for your desk.', price: 250, images: ['/handicrafts/item1.png'], sellerId: { name: 'Raju Craftsman' } },
+  { _id: '3', name: 'Bamboo Flower Vase', description: 'Beautiful handcrafted bamboo vase shown with artificial red flowers.', price: 450, images: ['/handicrafts/item2.png'], sellerId: { name: 'Meena Devi' } },
+  { _id: '4', name: 'Floral Bamboo Wall Hanging', description: 'Decorative bamboo grid wall hanging featuring pink artificial flowers.', price: 650, images: ['/handicrafts/item3.png'], sellerId: { name: 'Anita Decoratives' } },
+  { _id: '5', name: 'Bamboo Pen Stand Set', description: 'Handcrafted bamboo pen stand set with multiple compartments.', price: 750, images: ['/handicrafts/item4.png'], sellerId: { name: 'Kamla Devi' } },
+  { _id: '6', name: 'Grid Bamboo Wall Decor', description: 'Decorative diamond grid wall piece made of natural bamboo.', price: 600, images: ['/handicrafts/item6.png'], sellerId: { name: 'Tribal Artisans' } },
+  { _id: '7', name: 'Diamond Bamboo Wall Decor', description: 'Intricate diamond-shaped bamboo wall decor piece for home interiors.', price: 850, images: ['/handicrafts/item7.jpg'], sellerId: { name: 'Kamla Devi' } },
 ];
 
 /* ─── step config ─────────────────────────────────────────────────────── */
