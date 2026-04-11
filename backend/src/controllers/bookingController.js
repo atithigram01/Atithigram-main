@@ -4,7 +4,20 @@ const Booking = require('../models/Booking');
 // @route   POST /api/bookings
 exports.createBooking = async (req, res) => {
   try {
-    const booking = await Booking.create({ ...req.body, userId: req.user._id });
+    const { homestayId, productId, checkIn, checkOut, guests, totalAmount } = req.body;
+
+    const bookingData = {
+      userId: req.user._id,
+      itemId: homestayId || productId,
+      itemModel: homestayId ? 'Homestay' : 'Product',
+      totalAmount,
+      checkIn,
+      checkOut,
+      guests,
+      status: 'Confirmed' // Defaulting to confirmed for smooth UX
+    };
+
+    const booking = await Booking.create(bookingData);
     res.status(201).json(booking);
   } catch (error) {
     res.status(500).json({ message: error.message });

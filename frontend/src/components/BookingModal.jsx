@@ -42,6 +42,8 @@ export default function BookingModal({ stay, onClose }) {
     }
 
     setStep('loading');
+    setError('');
+
     try {
       await createBooking({
         homestayId: stay._id,
@@ -50,11 +52,16 @@ export default function BookingModal({ stay, onClose }) {
         guests: form.guests,
         totalAmount: baseAmount,
       });
-    } catch {
-      // API might not be running — still show success for demo
+
+      // Persist eco-points to backend
+      await addEcoPoints(20);
+      
+      setStep('success');
+    } catch (err) {
+      const msg = err.response?.data?.message || 'Failed to create booking. Please try again.';
+      setError(msg);
+      setStep('form');
     }
-    addEcoPoints(20);
-    setTimeout(() => setStep('success'), 800);
   };
 
   return (

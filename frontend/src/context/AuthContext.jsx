@@ -40,16 +40,29 @@ export const AuthProvider = ({ children }) => {
    * Add eco-points to the current user's balance.
    * Persists to localStorage so points survive a refresh.
    */
-  const addEcoPoints = (n) => {
-    setEcoPoints((prev) => {
-      const next = prev + n;
+  const addEcoPoints = async (n) => {
+    try {
       if (user) {
-        const updated = { ...user, ecoPoints: next };
-        _persist(updated);
-        setUser(updated);
+        const { data } = await api.updateEcoPoints(n);
+        _persist(data);
+        setUser(data);
+        setEcoPoints(data.ecoPoints);
+      } else {
+        setEcoPoints((prev) => prev + n);
       }
-      return next;
-    });
+    } catch (err) {
+      console.error('Failed to sync eco-points with backend:', err);
+      // Fallback for offline/demo: just update local state
+      setEcoPoints((prev) => {
+        const next = prev + n;
+        if (user) {
+          const updated = { ...user, ecoPoints: next };
+          _persist(updated);
+          setUser(updated);
+        }
+        return next;
+      });
+    }
   };
 
   return (
