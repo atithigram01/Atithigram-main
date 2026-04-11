@@ -117,8 +117,9 @@ const connectDB = async () => {
         process.exit(1);
       }
     } else {
-      console.error(`Error: ${error.message}`);
-      process.exit(1);
+      console.error(`MongoDB connection error: ${error.message}`);
+      // Don't call process.exit in production/serverless — let the
+      // function stay alive so individual requests can return proper errors.
     }
   }
 };
