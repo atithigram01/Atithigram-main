@@ -95,24 +95,23 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-6 leading-none flex flex-col items-center justify-center text-center"
+            className="mb-6 leading-none flex flex-col items-center justify-center text-center w-full"
           >
             <span className="font-script text-white text-5xl md:text-7xl block mb-2 font-normal tracking-wide">
               Lets Explore
             </span>
-            <span className="font-playfair text-accent text-6xl md:text-8xl font-black tracking-widest uppercase block drop-shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
+            <span className="font-playfair text-accent text-4xl sm:text-6xl md:text-8xl font-black tracking-wider sm:tracking-widest uppercase block drop-shadow-[0_4px_16px_rgba(0,0,0,0.5)] w-full break-words">
               Jharkhand
             </span>
           </motion.h1>
-
+ 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl mb-10 font-light text-gray-200 max-w-3xl mx-auto"
+            className="text-lg md:text-2xl mb-10 font-light text-gray-200 max-w-3xl mx-auto px-2"
           >
             A sustainable journey into eco-tourism, tribal culture, and thrilling adventures.
-            Earn Eco-Points with every experience.
           </motion.p>
 
           <motion.div

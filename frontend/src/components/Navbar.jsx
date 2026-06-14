@@ -1,18 +1,29 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Menu, X, LogOut, User, ChevronDown } from 'lucide-react';
+import { 
+  Menu, 
+  X, 
+  LogOut, 
+  User, 
+  ChevronDown, 
+  MapPin, 
+  Map, 
+  Compass, 
+  Calendar, 
+  Sparkles, 
+  Gift, 
+  AlertTriangle 
+} from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 const NAV_LINKS = [
-  { to: '/places', label: 'Places' },
-  { to: '/map', label: '🗺 Map' },
-  { to: '/adventure', label: '🏕 Adventure' },
-  // { to: '/homestays', label: '🏡 Homestays' },
-  // { to: '/handicrafts', label: '🎨 Handicrafts' },
-  { to: '/events', label: '🎪 Events' },
-  { to: '/planner', label: '✨ AI Planner' },
-  { to: '/rewards', label: '🌿 Rewards' },
-  { to: '/emergency', label: '🚨 Emergency' },
+  { to: '/places', label: 'Places', icon: MapPin },
+  { to: '/map', label: 'Map', icon: Map },
+  { to: '/adventure', label: 'Adventure', icon: Compass },
+  { to: '/events', label: 'Events', icon: Calendar },
+  { to: '/planner', label: 'AI Planner', icon: Sparkles },
+  { to: '/rewards', label: 'Rewards', icon: Gift },
+  { to: '/emergency', label: 'Emergency', icon: AlertTriangle },
 ];
 
 export default function Navbar() {
@@ -38,19 +49,20 @@ export default function Navbar() {
             <img
               src="/logo.png"
               alt="Atithigram Logo"
-              style={{ width: 42, height: 42, objectFit: 'contain', mixBlendMode: 'screen' }}
+              style={{ width: 42, height: 42, objectFit: 'contain' }}
             />
             <span>Atithigram</span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
-            {NAV_LINKS.map(({ to, label }) => (
+            {NAV_LINKS.map(({ to, label, icon: Icon }) => (
               <Link key={to} to={to}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5 ${
                   location.pathname === to ? 'bg-white/20 text-white' : 'hover:bg-white/10 text-green-100'
                 }`}>
-                {label}
+                <Icon size={16} />
+                <span>{label}</span>
               </Link>
             ))}
           </div>
@@ -118,12 +130,13 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="lg:hidden bg-green-900 border-t border-white/10 pb-4 px-4 space-y-1">
-          {NAV_LINKS.map(({ to, label }) => (
+          {NAV_LINKS.map(({ to, label, icon: Icon }) => (
             <Link key={to} to={to} onClick={() => setIsOpen(false)}
-              className={`block py-2.5 px-3 rounded-lg text-sm hover:bg-white/10 transition-colors ${
+              className={`flex items-center gap-2.5 py-2.5 px-3 rounded-lg text-sm hover:bg-white/10 transition-colors ${
                 location.pathname === to ? 'bg-white/15 font-medium' : ''
               }`}>
-              {label}
+              <Icon size={16} />
+              <span>{label}</span>
             </Link>
           ))}
           <div className="pt-3 border-t border-white/10 mt-2">
