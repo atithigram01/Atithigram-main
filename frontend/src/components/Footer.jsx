@@ -61,7 +61,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-gray-700 pt-6 text-center text-xs text-gray-500">
-        <p>&copy; {new Date().getFullYear()} ATITHIGRAM. All rights reserved. | Made by 💚 Team Atithigram </p>
+        <p>&copy; {new Date().getFullYear()} ATITHIGRAM. All rights reserved. | Made by 💚 Team Atithigramm </p>
       </div>
     </footer>
   );
