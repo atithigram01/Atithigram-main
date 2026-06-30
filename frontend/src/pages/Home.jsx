@@ -80,7 +80,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl mb-10 font-light text-gray-200 max-w-3xl mx-auto"
           >
-            A sustainable journey into eco-tourism, tribal culture, and pristine homestays.
+            Discover Jharkhand through nature, heritage, and unforgettable adventures
             Earn Eco-Points with every experience.
           </motion.p>
 
