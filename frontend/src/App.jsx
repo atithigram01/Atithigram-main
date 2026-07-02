@@ -4,6 +4,7 @@ import { AuthProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ProtectedRoute from './components/ProtectedRoute';
+import TouristChatBot from './components/TouristChatBot';
 
 import Home from './pages/Home';
 import Places from './pages/Places';
@@ -65,6 +66,7 @@ function App() {
             </Routes>
           </main>
           <Footer />
+          <TouristChatBot />
         </div>
       </AuthProvider>
     </Router>
